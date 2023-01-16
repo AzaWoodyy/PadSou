@@ -1,5 +1,6 @@
 package com.example.padsous.screens
 
+import HomePageContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -24,6 +25,6 @@ fun HomePage() {
             .fillMaxWidth()
             .height(35.dp)
     ) {
-        Text(text = "Hello World !")
+        HomePageContent()
     }
 }
