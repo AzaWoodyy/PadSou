@@ -1,4 +1,4 @@
-package com.example.padsous.features.homepage
+package com.example.padsous.features.onboarding
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,7 +16,7 @@ import com.example.padsous.ui.theme.IntegralCf
 import com.example.padsous.ui.theme.SalmonCustom
 
 @Composable
-fun HomePageHeader() {
+fun OnBoardingHeader() {
     Column (
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
