@@ -1,10 +1,7 @@
-package com.example.padsous.screens
+package com.example.padsous.features.plandetail
 
-import HomePageContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -17,21 +14,36 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.padsous.features.homepage.HomePageHeader
 import com.example.padsous.ui.theme.BlueCustom
 import com.example.padsous.ui.theme.IntegralCf
-import com.example.padsous.ui.theme.SalmonCustom
+import com.example.padsous.ui.theme.MediumGreyCustom
 
 @Composable
-fun HomePage() {
+fun PlanDetailFooter() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .fillMaxWidth()
-            .background(BlueCustom)
+            .offset(y = 150.dp)
     ) {
-        HomePageHeader()
-        HomePageContent()
+        Button(
+            onClick = { /*TODO*/ },
+            Modifier
+                .width(300.dp)
+                .clip(shape = RoundedCornerShape(20.dp))
+                .height(60.dp),
+
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = BlueCustom,
+                contentColor = Color.White
+            )
+        ) {
+            Text(
+                color = Color.White,
+                fontFamily = IntegralCf,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                text = "PROFITER DE L'OFFRE"
+            )
+        }
     }
 }
-

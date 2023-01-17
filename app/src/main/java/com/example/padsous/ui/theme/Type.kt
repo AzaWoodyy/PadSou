@@ -24,7 +24,7 @@ val Inter = FontFamily(
 val IntegralCf = FontFamily(
     Font(R.font.integralcf_heavy, FontWeight.Black),
     Font(R.font.integralcf_extrabold, FontWeight.ExtraBold),
-    Font(R.font.integralcf_regular),
+    Font(R.font.integralcd_regular),
     Font(R.font.integralcf_medium, FontWeight.Medium),
     Font(R.font.integralcf_demibold, FontWeight.SemiBold),
     Font(R.font.integralcf_bold, FontWeight.Bold),

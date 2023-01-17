@@ -10,12 +10,12 @@ import androidx.compose.ui.graphics.Color
 import com.example.padsous.features.homepage.RegisterPageForm
 import com.example.padsous.features.homepage.RegisterPageHeader
 import com.example.padsous.features.register.RegisterPageFooter
-import com.example.padsous.ui.theme.MediumGrey
+import com.example.padsous.ui.theme.MediumGreyCustom
 
 
 @Composable
 fun RegisterPage() {
-    Column ( modifier = Modifier.background(color = MediumGrey),) {
+    Column ( modifier = Modifier.background(color = MediumGreyCustom),) {
        RegisterPageHeader()
         RegisterPageForm()
         RegisterPageFooter()

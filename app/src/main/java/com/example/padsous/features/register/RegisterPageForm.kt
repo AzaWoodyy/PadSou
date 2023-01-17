@@ -18,11 +18,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.padsous.ui.theme.DarkGrey
-import com.example.padsous.ui.theme.Grey
-import com.example.padsous.ui.theme.IntegralCf
-import com.example.padsous.ui.theme.Inter
-
+import com.example.padsous.ui.theme.*
 
 
 @Composable
@@ -57,7 +53,7 @@ fun RegisterPageForm() {
                 placeholder = { Text(text = "Ton adresse e-mail",
                                      style = TextStyle(fontSize = 16.sp,
                                         fontFamily = Inter,
-                                        color = Grey))
+                                        color = GreyCustom))
                               },
                 onValueChange = {
                     text1 = it
@@ -88,7 +84,7 @@ fun RegisterPageForm() {
                 placeholder = { Text(text = "Ton mot de passe",
                                      style = TextStyle(fontSize = 16.sp,
                                         fontFamily = Inter,
-                                        color = Grey)) },
+                                        color = GreyCustom)) },
                 onValueChange = {
                     text2 = it
                 },
@@ -119,7 +115,7 @@ fun RegisterPageForm() {
                 placeholder = { Text(text = "Confirme ton mot de passe",
                                     style = TextStyle(fontSize = 16.sp,
                                         fontFamily = Inter,
-                                        color = Grey)) },
+                                        color = GreyCustom)) },
                 onValueChange = {
                     text3 = it
                 },
@@ -132,7 +128,7 @@ fun RegisterPageForm() {
             //------------------------Text + button ---------------------------
 
             Column(Modifier.padding(25.dp, 30.dp, 0.dp, 10.dp)) {
-                Text( color = DarkGrey,
+                Text( color = DarkGreyCustom,
                     fontWeight = FontWeight.Bold,
                     fontFamily = Inter,
                     fontSize = 14.sp,

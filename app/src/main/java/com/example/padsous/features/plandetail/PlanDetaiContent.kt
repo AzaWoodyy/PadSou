@@ -1,10 +1,7 @@
-package com.example.padsous.screens
+package com.example.padsous.features.plandetail
 
-import HomePageContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -17,21 +14,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.padsous.features.homepage.HomePageHeader
-import com.example.padsous.ui.theme.BlueCustom
-import com.example.padsous.ui.theme.IntegralCf
-import com.example.padsous.ui.theme.SalmonCustom
+import com.example.padsous.models.Plan
+import com.example.padsous.ui.theme.*
 
 @Composable
-fun HomePage() {
+fun PlanDetailContent(planId: Int, nbTesters: Int) {
+
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .background(BlueCustom)
+            .padding(top = 40.dp)
     ) {
-        HomePageHeader()
-        HomePageContent()
+        Comment()
+        Spacer(modifier = Modifier.height(30.dp))
+        Text(
+            text = "TESTÉE PAR $nbTesters GALERIENS",
+            color = AlmostBlackCustom,
+            fontFamily = IntegralCf,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Black
+        )
     }
 }
-

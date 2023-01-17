@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.padsous.ui.theme.IntegralCf
 import com.example.padsous.ui.theme.Inter
-import com.example.padsous.ui.theme.AlmostBlack
+import com.example.padsous.ui.theme.AlmostBlackCustom
 
 
 @Composable
@@ -24,7 +24,7 @@ fun RegisterPageHeader() {
                 .fillMaxWidth()
         ){
             Text(
-                color = AlmostBlack,
+                color = AlmostBlackCustom,
                 fontFamily = IntegralCf,
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
@@ -35,7 +35,7 @@ fun RegisterPageHeader() {
 
             Column() {
                 Text(
-                    color = AlmostBlack,
+                    color = AlmostBlackCustom,
                     modifier = Modifier.padding(horizontal = 80.dp),
                     text = "Inscris-toi pour avoir les meilleurs plans étudiants !",
                     fontFamily = Inter,
