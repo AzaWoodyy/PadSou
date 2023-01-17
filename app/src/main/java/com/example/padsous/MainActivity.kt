@@ -10,8 +10,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.padsous.models.Plan
 import com.example.padsous.screens.HomePage
 import com.example.padsous.screens.OnBoarding
+import com.example.padsous.screens.PlanDetail
 import com.example.padsous.ui.theme.PadSousTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +35,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting() {
-    HomePage()
+    val plan1: Plan = Plan(id = 8, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg, nbTesters = 12)
+
+    PlanDetail(plan1)
 }
 
 @Preview(showBackground = true)

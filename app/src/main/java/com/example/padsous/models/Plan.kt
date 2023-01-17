@@ -5,5 +5,6 @@ data class Plan(
     val name: String,
     val description: String,
     val descImage: Int,
+    val nbTesters: Int,
     val image: Int
 )

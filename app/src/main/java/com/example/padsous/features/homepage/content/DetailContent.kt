@@ -23,14 +23,14 @@ import com.google.accompanist.flowlayout.MainAxisAlignment
 
 @Composable
 fun DetailContent() {
-    val plan1: Plan = Plan(id = 1, name = "Abonnement 1 an", description = "2 mois offerts", descImage = R.drawable.sportdesc, image = R.drawable.sportimg)
-    val plan2: Plan = Plan(id = 2, name = "Le grand barathon", description = "1 verre acheté = 1 offert", descImage = R.drawable.bardesc, image = R.drawable.barimg)
-    val plan3: Plan = Plan(id = 3, name = "Reduc Rbnb", description = "50% pendant 2 mois", descImage = R.drawable.hosteldesc, image = R.drawable.hostelimg)
-    val plan4: Plan = Plan(id = 4, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg)
-    val plan5: Plan = Plan(id = 5, name = "Abonnement 1 an", description = "2 mois offerts", descImage = R.drawable.sportdesc, image = R.drawable.sportimg)
-    val plan6: Plan = Plan(id = 6, name = "Le grand barathon", description = "1 verre acheté = 1 offert", descImage = R.drawable.bardesc, image = R.drawable.barimg)
-    val plan7: Plan = Plan(id = 7, name = "Reduc Rbnb", description = "50% pendant 2 mois", descImage = R.drawable.hosteldesc, image = R.drawable.hostelimg)
-    val plan8: Plan = Plan(id = 8, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg)
+    val plan1: Plan = Plan(id = 1, name = "Abonnement 1 an", description = "2 mois offerts", descImage = R.drawable.sportdesc, image = R.drawable.sportimg, nbTesters = 25)
+    val plan2: Plan = Plan(id = 2, name = "Le grand barathon", description = "1 verre acheté = 1 offert", descImage = R.drawable.bardesc, image = R.drawable.barimg, nbTesters = 25)
+    val plan3: Plan = Plan(id = 3, name = "Reduc Rbnb", description = "50% pendant 2 mois", descImage = R.drawable.hosteldesc, image = R.drawable.hostelimg, nbTesters = 25)
+    val plan4: Plan = Plan(id = 4, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg, nbTesters = 25)
+    val plan5: Plan = Plan(id = 5, name = "Abonnement 1 an", description = "2 mois offerts", descImage = R.drawable.sportdesc, image = R.drawable.sportimg, nbTesters = 25)
+    val plan6: Plan = Plan(id = 6, name = "Le grand barathon", description = "1 verre acheté = 1 offert", descImage = R.drawable.bardesc, image = R.drawable.barimg, nbTesters = 25)
+    val plan7: Plan = Plan(id = 7, name = "Reduc Rbnb", description = "50% pendant 2 mois", descImage = R.drawable.hosteldesc, image = R.drawable.hostelimg, nbTesters = 25)
+    val plan8: Plan = Plan(id = 8, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg, nbTesters = 25)
     val plans = listOf(plan1, plan2, plan3, plan4, plan5, plan6, plan7, plan8)
 
     Column (
