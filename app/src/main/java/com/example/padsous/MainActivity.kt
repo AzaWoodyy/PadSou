@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.padsous.screens.HomePage
+import com.example.padsous.screens.RegisterPage
 import com.example.padsous.ui.theme.PadSousTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting() {
-    HomePage()
+    RegisterPage()
 }
 
 @Preview(showBackground = true)

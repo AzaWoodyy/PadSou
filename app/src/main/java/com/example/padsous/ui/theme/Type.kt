@@ -10,24 +10,24 @@ import com.example.padsous.R
 
 
 val Inter = FontFamily(
-    Font(R.font.Inter_Thin, FontWeight.Thin),
-    Font(R.font.Inter_ExtraLight, FontWeight.ExtraLight),
-    Font(R.font.Inter_Light, FontWeight.Light),
-    Font(R.font.Inter_ExtraBold, FontWeight.ExtraBold),
-    Font(R.font.Inter_Regular),
-    Font(R.font.Inter_Medium, FontWeight.Medium),
-    Font(R.font.Inter_Semibold, FontWeight.SemiBold),
-    Font(R.font.Inter_Bold, FontWeight.Bold),
-    Font(R.font.Inter_Black, FontWeight.Black)
+    Font(R.font.inter_thin, FontWeight.Thin),
+    Font(R.font.inter_extralight, FontWeight.ExtraLight),
+    Font(R.font.inter_light, FontWeight.Light),
+    Font(R.font.inter_extrabold, FontWeight.ExtraBold),
+    Font(R.font.inter_regular),
+    Font(R.font.inter_medium, FontWeight.Medium),
+    Font(R.font.inter_semibold, FontWeight.SemiBold),
+    Font(R.font.inter_bold, FontWeight.Bold),
+    Font(R.font.inter_black, FontWeight.Black)
 )
 
 val IntegralCf = FontFamily(
-    Font(R.font.Integralcf_heavy, FontWeight.Black),
-    Font(R.font.Integralcf_extrabold, FontWeight.ExtraBold),
-    Font(R.font.Integralcf_regular),
-    Font(R.font.Integralcf_medium, FontWeight.Medium),
-    Font(R.font.Integralcf_demibold, FontWeight.SemiBold),
-    Font(R.font.Integralcf_bold, FontWeight.Bold),
+    Font(R.font.integralcf_heavy, FontWeight.Black),
+    Font(R.font.integralcf_extrabold, FontWeight.ExtraBold),
+    Font(R.font.integralcf_regular),
+    Font(R.font.integralcf_medium, FontWeight.Medium),
+    Font(R.font.integralcf_demibold, FontWeight.SemiBold),
+    Font(R.font.integralcf_bold, FontWeight.Bold),
 )
 
 // Set of Material typography styles to start with
