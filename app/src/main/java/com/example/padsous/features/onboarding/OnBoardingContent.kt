@@ -28,7 +28,7 @@ fun OnBoardingContent() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .height(500.dp)
-            .padding(0.dp, 80.dp, 0.dp, 0.dp)
+            .padding(0.dp, 50.dp, 0.dp, 0.dp)
             .fillMaxWidth()
     ) {
         HorizontalPagerIndicator(

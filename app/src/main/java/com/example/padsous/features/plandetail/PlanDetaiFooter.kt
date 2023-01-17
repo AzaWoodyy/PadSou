@@ -42,7 +42,7 @@ fun PlanDetailFooter() {
                 fontFamily = IntegralCf,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
-                text = "PROFITER DE L OFFRE"
+                text = "PROFITER DE L'OFFRE"
             )
         }
     }

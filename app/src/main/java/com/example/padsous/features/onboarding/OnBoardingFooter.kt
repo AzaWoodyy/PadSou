@@ -22,7 +22,7 @@ fun OnBoardingFooter() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(0.dp, 0.dp, 0.dp, 20.dp)
+            .offset(y = -(15).dp)
     ) {
         Button(
             onClick = { /*TODO*/ },
@@ -41,7 +41,7 @@ fun OnBoardingFooter() {
                 fontFamily = IntegralCf,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
-                text = "C EST PARTI"
+                text = "C'EST PARTI !"
             )
         }
     }

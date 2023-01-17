@@ -36,7 +36,7 @@ fun OnBoardingHeader() {
             fontFamily = IntegralCf,
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold,
-            text = "YA PADSOU."
+            text = "Y'A PADSOU."
         )
     }
 }

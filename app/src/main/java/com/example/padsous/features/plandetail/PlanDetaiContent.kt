@@ -30,7 +30,7 @@ fun PlanDetailContent(planId: Int, nbTesters: Int) {
         Comment()
         Spacer(modifier = Modifier.height(30.dp))
         Text(
-            text = "TESTEE PAR $nbTesters GALERIENS",
+            text = "TESTÉE PAR $nbTesters GALERIENS",
             color = AlmostBlackCustom,
             fontFamily = IntegralCf,
             fontSize = 14.sp,
