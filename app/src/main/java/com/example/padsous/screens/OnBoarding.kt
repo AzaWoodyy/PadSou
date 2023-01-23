@@ -17,7 +17,6 @@ fun OnBoarding(onNavigateToLogin: () -> Unit) {
         modifier = Modifier
             .background(color = BlueCustom)
             .fillMaxWidth()
-            .padding(20.dp)
             .fillMaxHeight()
     ) {
             OnBoardingHeader()

@@ -10,6 +10,8 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -17,9 +19,12 @@ import androidx.navigation.compose.rememberNavController
 import com.example.padsous.features.navigation.BottomNavigationBar
 import com.example.padsous.features.navigation.ScreensNavHost
 import com.example.padsous.models.Screen
+import com.example.padsous.models.Plan
+import com.example.padsous.screens.*
 
 import com.example.padsous.ui.theme.PadSousTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.HorizontalPager
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,10 +55,6 @@ fun Greeting() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    var isConnected by rememberSaveable {
-        mutableStateOf(false)
-    }
-    println(currentDestination)
     Scaffold(
 
         bottomBar = {
@@ -64,19 +65,7 @@ fun Greeting() {
     ){
         ScreensNavHost(navController = navController)
     }
-
-    /*HorizontalPager(count = 4)
-    { page ->
-        when (page) {
-            0 -> OnBoarding()
-            1 -> HomePage()
-            2 -> PlanDetail(plan1)
-            3 -> RegisterPage()
-        }
-    }*/
-
 }
-
 
 @Preview(showBackground = true)
 @Composable

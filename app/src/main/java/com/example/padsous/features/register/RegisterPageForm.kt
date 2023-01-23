@@ -25,7 +25,9 @@ import com.example.padsous.ui.theme.*
 fun RegisterPageForm(navigateToHomePage: () -> Unit) {
         Column(
             verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .offset(y = -(50.dp))
         ) {
             var text1 by remember { mutableStateOf(TextFieldValue("")) }
             var text2 by remember { mutableStateOf(TextFieldValue("")) }
@@ -138,10 +140,15 @@ fun RegisterPageForm(navigateToHomePage: () -> Unit) {
             Box(modifier = Modifier.padding(horizontal = 20.dp)) {
                 Button(
                     onClick = navigateToHomePage,
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = DarkBlueCustom
+                    ),
                     shape = RoundedCornerShape(20.dp),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(65.dp)
+                        .height(60.dp)
+
+
                 ) {
                     Text(
                         text = "Se connecter".toUpperCase(),
