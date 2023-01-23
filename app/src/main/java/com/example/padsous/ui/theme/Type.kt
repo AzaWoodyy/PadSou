@@ -10,7 +10,6 @@ import com.example.padsous.R
 
 
 val Inter = FontFamily(
-    Font(R.font.inter_thin, FontWeight.Thin),
     Font(R.font.inter_extralight, FontWeight.ExtraLight),
     Font(R.font.inter_light, FontWeight.Light),
     Font(R.font.inter_extrabold, FontWeight.ExtraBold),

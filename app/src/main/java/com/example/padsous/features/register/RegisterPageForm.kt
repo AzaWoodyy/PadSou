@@ -138,10 +138,15 @@ fun RegisterPageForm() {
             Box(modifier = Modifier.padding(horizontal = 20.dp)) {
                 Button(
                     onClick = {},
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = DarkBlueCustom
+                    ),
                     shape = RoundedCornerShape(20.dp),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(65.dp)
+                        .height(60.dp)
+
+
                 ) {
                     Text(
                         text = "Se connecter".toUpperCase(),
