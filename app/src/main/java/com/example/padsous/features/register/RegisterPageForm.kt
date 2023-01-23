@@ -22,7 +22,7 @@ import com.example.padsous.ui.theme.*
 
 
 @Composable
-fun RegisterPageForm() {
+fun RegisterPageForm(navigateToHomePage: () -> Unit) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -137,7 +137,7 @@ fun RegisterPageForm() {
             }
             Box(modifier = Modifier.padding(horizontal = 20.dp)) {
                 Button(
-                    onClick = {},
+                    onClick = navigateToHomePage,
                     shape = RoundedCornerShape(20.dp),
                     modifier = Modifier
                         .fillMaxWidth()

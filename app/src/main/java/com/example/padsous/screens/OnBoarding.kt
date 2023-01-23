@@ -11,7 +11,7 @@ import com.example.padsous.features.onboarding.OnBoardingHeader
 import com.example.padsous.ui.theme.BlueCustom
 
 @Composable
-fun OnBoarding() {
+fun OnBoarding(onNavigateToLogin: () -> Unit) {
     Column(
         verticalArrangement = Arrangement.SpaceAround,
         modifier = Modifier
@@ -22,6 +22,6 @@ fun OnBoarding() {
     ) {
             OnBoardingHeader()
             OnBoardingContent()
-            OnBoardingFooter()
+            OnBoardingFooter(onNavigateToLogin)
     }
 }

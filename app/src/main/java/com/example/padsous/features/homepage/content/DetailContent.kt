@@ -8,21 +8,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import com.example.padsous.R
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.padsous.features.homepage.content.Card
 import com.google.accompanist.flowlayout.FlowRow
 import com.example.padsous.features.homepage.content.TypeIcon
 import com.example.padsous.models.Plan
+import com.example.padsous.models.Screen
 import com.example.padsous.ui.theme.*
 import com.google.accompanist.flowlayout.FlowCrossAxisAlignment
 import com.google.accompanist.flowlayout.MainAxisAlignment
 
 @Composable
-fun DetailContent() {
+fun DetailContent(navController: NavController) {
     val plan1: Plan = Plan(id = 1, name = "Abonnement 1 an", description = "2 mois offerts", descImage = R.drawable.sportdesc, image = R.drawable.sportimg, nbTesters = 25)
     val plan2: Plan = Plan(id = 2, name = "Le grand barathon", description = "1 verre acheté = 1 offert", descImage = R.drawable.bardesc, image = R.drawable.barimg, nbTesters = 25)
     val plan3: Plan = Plan(id = 3, name = "Reduc Rbnb", description = "50% pendant 2 mois", descImage = R.drawable.hosteldesc, image = R.drawable.hostelimg, nbTesters = 25)
@@ -81,7 +82,7 @@ fun DetailContent() {
                 .padding(top = 20.dp, bottom = 20.dp)
         ) {
             for (plan in plans) {
-                Card(plan = plan)
+                Card(plan = plan, navigateToDetail = {navController.navigate(Screen.PlanDetailScreen.route+"/"+plan.id)})
             }
         }
     }

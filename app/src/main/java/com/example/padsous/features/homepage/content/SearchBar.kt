@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
@@ -30,7 +31,7 @@ fun SearchBar() {
     Box(modifier = Modifier.padding(bottom = 50.dp))
     {
         var text by remember { mutableStateOf(TextFieldValue("")) }
-        TextField(
+        OutlinedTextField(
             value = text,
             maxLines = 1,
             colors = TextFieldDefaults.textFieldColors(
@@ -39,6 +40,7 @@ fun SearchBar() {
                 disabledIndicatorColor = Color.Transparent,
                 cursorColor = Color.Black,
                 textColor = AlmostBlackCustom,
+                backgroundColor = Color.White
             ),
             leadingIcon = {
                 Image(
@@ -56,8 +58,7 @@ fun SearchBar() {
                 fontWeight = FontWeight.Medium
             ),
             modifier = Modifier
-                .clip(RoundedCornerShape(20.dp))
-                .background(Color.White),
+                .clip(RoundedCornerShape(20.dp)),
             placeholder = {
                 Text(
                     "Cherche un bon plan",

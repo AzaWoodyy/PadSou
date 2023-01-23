@@ -17,7 +17,7 @@ import com.example.padsous.ui.theme.IntegralCf
 import com.example.padsous.ui.theme.SalmonCustom
 
 @Composable
-fun OnBoardingFooter() {
+fun OnBoardingFooter(onNavigateToLogin: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -25,7 +25,7 @@ fun OnBoardingFooter() {
             .offset(y = -(15).dp)
     ) {
         Button(
-            onClick = { /*TODO*/ },
+            onClick = onNavigateToLogin,
             Modifier
                 .width(250.dp)
                 .clip(shape = RoundedCornerShape(15.dp))

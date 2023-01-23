@@ -2,11 +2,8 @@ package com.example.padsous.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import com.example.padsous.features.homepage.RegisterPageForm
 import com.example.padsous.features.homepage.RegisterPageHeader
 import com.example.padsous.features.register.RegisterPageFooter
@@ -14,10 +11,10 @@ import com.example.padsous.ui.theme.MediumGreyCustom
 
 
 @Composable
-fun RegisterPage() {
+fun RegisterPage(navigateToHomePage: () -> Unit) {
     Column ( modifier = Modifier.background(color = MediumGreyCustom),) {
        RegisterPageHeader()
-        RegisterPageForm()
+        RegisterPageForm(navigateToHomePage = navigateToHomePage)
         RegisterPageFooter()
     }
 
