@@ -16,12 +16,13 @@ import androidx.compose.ui.unit.sp
 import com.example.padsous.ui.theme.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun PlanContent(pageState: PagerState) {
+fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -176,7 +177,7 @@ fun PlanContent(pageState: PagerState) {
             }
         }
         Button(
-            onClick = { MainScope().launch { pageState.scrollToPage(pageState.currentPage + 1)} },
+            onClick = { coroutineScope.launch { pageState.animateScrollToPage(pageState.currentPage + 1)} },
             Modifier
                 .width(300.dp)
                 .clip(shape = RoundedCornerShape(20.dp))

@@ -20,7 +20,7 @@ fun RegisterPageHeader() {
         Column (
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(0.dp, 40.dp, 0.dp, 50.dp)
+                .padding(0.dp, 40.dp, 0.dp, 0.dp)
                 .fillMaxWidth()
         ){
             Text(
