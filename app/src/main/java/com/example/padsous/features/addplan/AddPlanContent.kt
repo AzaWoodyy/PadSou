@@ -24,6 +24,7 @@ import com.google.accompanist.pager.rememberPagerState
 @Composable
 fun AddPlanContent() {
     val pagerState = rememberPagerState()
+    val coroutineScope = rememberCoroutineScope()
     var swipable by remember { mutableStateOf(false) }
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -51,7 +52,7 @@ fun AddPlanContent() {
             swipable = currentPage != 0
             when (page) {
                 0 -> {
-                    PlanContent(pagerState)
+                    PlanContent(pagerState, coroutineScope)
                 }
                 1 -> {
                     PlanImage(pagerState)

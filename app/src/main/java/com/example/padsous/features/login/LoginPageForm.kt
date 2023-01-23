@@ -24,7 +24,9 @@ import com.example.padsous.ui.theme.*
 fun LoginPageForm() {
     Column(
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .offset(y = -(105.dp))
     ) {
 
         var text1 by remember { mutableStateOf(TextFieldValue("")) }

@@ -25,7 +25,9 @@ import com.example.padsous.ui.theme.*
 fun RegisterPageForm() {
         Column(
             verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .offset(y = -(50.dp))
         ) {
             var text1 by remember { mutableStateOf(TextFieldValue("")) }
             var text2 by remember { mutableStateOf(TextFieldValue("")) }
