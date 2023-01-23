@@ -26,7 +26,7 @@ fun RegisterPageHeader() {
             Text(
                 color = AlmostBlackCustom,
                 fontFamily = IntegralCf,
-                fontSize = 30.sp,
+                fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 text = "Bienvenue \uD83D\uDE0E"
             )

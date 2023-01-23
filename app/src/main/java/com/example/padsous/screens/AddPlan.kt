@@ -1,6 +1,10 @@
-package com.example.padsous.features.onboarding
+package com.example.padsous.screens
 
+import HomePageContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -13,36 +17,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.padsous.features.addplan.AddPlanContent
+import com.example.padsous.features.addplan.AddPlanHeader
+import com.example.padsous.features.homepage.HomePageHeader
+import com.example.padsous.ui.theme.BlueCustom
 import com.example.padsous.ui.theme.IntegralCf
 import com.example.padsous.ui.theme.SalmonCustom
 
 @Composable
-fun OnBoardingFooter() {
+fun AddPlan() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .fillMaxWidth()
-            .offset(y = -(50).dp)
+            .fillMaxSize()
+            .background(BlueCustom)
     ) {
-        Button(
-            onClick = { /*TODO*/ },
-            Modifier
-                .width(250.dp)
-                .clip(shape = RoundedCornerShape(15.dp))
-                .height(50.dp),
-
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = SalmonCustom,
-                contentColor = Color.White
-            )
-        ) {
-            Text(
-                color = Color.White,
-                fontFamily = IntegralCf,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
-                text = "C'EST PARTI !"
-            )
-        }
+        AddPlanHeader()
+        AddPlanContent()
     }
 }
+
