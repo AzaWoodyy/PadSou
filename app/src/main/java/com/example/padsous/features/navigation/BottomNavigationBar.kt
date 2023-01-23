@@ -32,6 +32,7 @@ import com.example.padsous.screens.OnBoarding
 import com.example.padsous.screens.PlanDetail
 import com.example.padsous.screens.RegisterPage
 import com.example.padsous.ui.theme.BlueCustom
+import com.example.padsous.ui.theme.GreyCustom
 import com.example.padsous.ui.theme.LightGreyCustom
 private object NoRippleTheme : RippleTheme {
     @Composable
@@ -52,6 +53,7 @@ fun BottomNavigationBar(navController: NavHostController) {
             backgroundColor = Color.White,
             modifier = Modifier
                 .clip(RoundedCornerShape(topEnd = 20.dp, topStart = 20.dp))
+                .height(70.dp)
         ) {
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentDestination = navBackStackEntry?.destination
@@ -60,7 +62,7 @@ fun BottomNavigationBar(navController: NavHostController) {
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(100.dp, 0.dp)
+                    .padding(100.dp, 10.dp)
             ) {
             CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
                 navItems.forEach { screen ->
@@ -71,15 +73,17 @@ fun BottomNavigationBar(navController: NavHostController) {
                     }
 
                     BottomNavigationItem(
-                        unselectedContentColor = LightGreyCustom,
+                        unselectedContentColor = GreyCustom,
                         selectedContentColor = BlueCustom,
                         modifier = Modifier
-                            .padding(15.dp),
+                            .padding(15.dp,0.dp)
+                            .clip(RoundedCornerShape(5.dp))
+                            .background(LightGreyCustom),
                         icon = {
                             Icon(
                                 painterResource(id = bottomBarIcon),
                                 contentDescription = null,
-                                Modifier.width(24.dp)
+                                Modifier.width(28.dp)
                             )
                         },
                         selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
