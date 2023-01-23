@@ -1,7 +1,9 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.indication
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Colors
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,17 +30,22 @@ fun OnBoardingContent() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .height(500.dp)
-            .padding(0.dp, 50.dp, 0.dp, 0.dp)
+            .padding(0.dp, 40.dp, 0.dp, 0.dp)
             .fillMaxWidth()
     ) {
         HorizontalPagerIndicator(
             pagerState = pagerState,
+            activeColor = Color.White,
             indicatorWidth = 25.dp,
             indicatorHeight = 5.dp,
             spacing = 6.dp,
             modifier = Modifier.padding(16.dp),
         )
-        HorizontalPager(count = 3, state = pagerState)
+        HorizontalPager(
+            count = 3,
+            state = pagerState,
+            itemSpacing = 10.dp
+        )
         { page ->
             Box(
                 //center content
