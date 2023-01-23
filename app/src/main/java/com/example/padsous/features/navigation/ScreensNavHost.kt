@@ -8,10 +8,7 @@ import androidx.navigation.compose.composable
 import com.example.padsous.R
 import com.example.padsous.models.Plan
 import com.example.padsous.models.Screen
-import com.example.padsous.screens.HomePage
-import com.example.padsous.screens.OnBoarding
-import com.example.padsous.screens.PlanDetail
-import com.example.padsous.screens.RegisterPage
+import com.example.padsous.screens.*
 
 @Composable
 fun ScreensNavHost(
@@ -38,5 +35,6 @@ fun ScreensNavHost(
             plans.find { it.id.toString() == backStackEntry.arguments?.getString("planId") }
                 ?.let { PlanDetail(plan = it) }
         }
+        composable(Screen.AddPlanScreen.route) { AddPlan() }
     }
 }

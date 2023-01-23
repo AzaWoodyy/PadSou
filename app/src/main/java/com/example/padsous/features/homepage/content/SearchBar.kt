@@ -41,7 +41,6 @@ fun SearchBar() {
                 disabledIndicatorColor = Color.Transparent,
                 cursorColor = Color.Black,
                 textColor = AlmostBlackCustom,
-                backgroundColor = Color.White
             ),
             leadingIcon = {
                 Image(

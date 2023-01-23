@@ -50,6 +50,7 @@ fun Greeting() {
 
     val bottomBarPage = listOf(
         Screen.HomePageScreen.route,
+        Screen.AddPlanScreen.route
     )
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
