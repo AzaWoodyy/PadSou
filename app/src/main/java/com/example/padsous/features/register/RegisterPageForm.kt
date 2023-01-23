@@ -42,6 +42,7 @@ fun RegisterPageForm() {
                     .background(color = Color.White),
                 value = text1,
                 maxLines = 1,
+                singleLine = true,
                 colors = TextFieldDefaults.textFieldColors(
                         backgroundColor = Color.White,
                         focusedIndicatorColor = Color.Transparent,
@@ -80,6 +81,7 @@ fun RegisterPageForm() {
                         cursorColor = Color.Black,
                         textColor = Color.Black),
                 maxLines = 1,
+                singleLine = true,
                 shape = RoundedCornerShape(20),
                 placeholder = { Text(text = "Ton mot de passe",
                                      style = TextStyle(fontSize = 16.sp,
@@ -111,6 +113,7 @@ fun RegisterPageForm() {
                     textColor = Color.Black),
                 value = text3,
                 maxLines = 1,
+                singleLine = true,
                 shape = RoundedCornerShape(20),
                 placeholder = { Text(text = "Confirme ton mot de passe",
                                     style = TextStyle(fontSize = 16.sp,
@@ -138,10 +141,15 @@ fun RegisterPageForm() {
             Box(modifier = Modifier.padding(horizontal = 20.dp)) {
                 Button(
                     onClick = {},
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = DarkBlueCustom
+                    ),
                     shape = RoundedCornerShape(20.dp),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(65.dp)
+                        .height(60.dp)
+
+
                 ) {
                     Text(
                         text = "Se connecter".toUpperCase(),
