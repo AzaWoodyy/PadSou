@@ -36,10 +36,11 @@ fun RegisterPageHeader() {
             Column() {
                 Text(
                     color = AlmostBlackCustom,
-                    modifier = Modifier.padding(horizontal = 80.dp),
+                    modifier = Modifier.padding(horizontal = 50.dp),
                     text = "Inscris-toi pour avoir les meilleurs plans étudiants !",
                     fontFamily = Inter,
                     fontSize = 20.sp,
+                    fontWeight = FontWeight.Medium,
                     textAlign = TextAlign.Center)
             }
         }

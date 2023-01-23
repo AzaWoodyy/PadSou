@@ -16,7 +16,7 @@ import com.example.padsous.ui.theme.Inter
 fun RegisterPageFooter() {
    Row  (horizontalArrangement = Arrangement.Center,
        verticalAlignment = Alignment.Bottom) {
-       Row(modifier = Modifier.padding(100.dp, 60.dp, 70.dp, 0.dp)) {
+       Row(modifier = Modifier.padding(80.dp, 60.dp, 70.dp, 0.dp)) {
            Text(
                color = DarkGreyCustom,
                fontFamily = Inter,
