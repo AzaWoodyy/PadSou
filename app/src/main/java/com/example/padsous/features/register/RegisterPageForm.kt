@@ -28,7 +28,9 @@ import com.example.padsous.util.AuthentificationViewModel
 fun RegisterPageForm(viewModel: AuthentificationViewModel) {
         Column(
             verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .offset(y = -(50.dp))
         ) {
             var email by remember { mutableStateOf("") }
             var password by remember { mutableStateOf("") }

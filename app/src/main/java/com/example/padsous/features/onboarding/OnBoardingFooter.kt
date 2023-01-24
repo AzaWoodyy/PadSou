@@ -22,7 +22,7 @@ fun OnBoardingFooter() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .offset(y = -(15).dp)
+            .offset(y = -(50).dp)
     ) {
         Button(
             onClick = { /*TODO*/ },

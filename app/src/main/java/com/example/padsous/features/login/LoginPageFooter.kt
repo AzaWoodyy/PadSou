@@ -2,6 +2,7 @@ package com.example.padsous.features.login
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -18,7 +19,10 @@ import com.example.padsous.ui.theme.Inter
 fun LoginPageFooter() {
     Row  (horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.Bottom) {
-        Row(modifier = Modifier.padding(80.dp, 60.dp, 70.dp, 0.dp)) {
+        Row(modifier = Modifier
+            .padding(80.dp, 60.dp, 70.dp, 0.dp)
+            .offset(y = -(30.dp))
+        ) {
             Text(
                 color = DarkGreyCustom,
                 fontFamily = Inter,

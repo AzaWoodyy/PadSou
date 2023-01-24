@@ -27,7 +27,9 @@ import com.example.padsous.util.AuthentificationViewModel
 fun LoginPageForm(viewModel: AuthentificationViewModel) {
     Column(
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .offset(y = -(105.dp))
     ) {
 
         val context = LocalContext.current

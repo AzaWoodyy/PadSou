@@ -17,6 +17,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.padsous.features.addplan.AddPlanContent
+import com.example.padsous.features.addplan.AddPlanHeader
 import com.example.padsous.features.homepage.HomePageHeader
 import com.example.padsous.ui.theme.BlueCustom
 import com.example.padsous.ui.theme.IntegralCf
@@ -25,7 +27,7 @@ import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
-fun HomePage(systemUiController: SystemUiController) {
+fun AddPlan(systemUiController: SystemUiController) {
     systemUiController.setSystemBarsColor(
         color = BlueCustom
     )
@@ -33,11 +35,11 @@ fun HomePage(systemUiController: SystemUiController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .fillMaxWidth()
+            .fillMaxSize()
             .background(BlueCustom)
     ) {
-        HomePageHeader()
-        HomePageContent()
+        AddPlanHeader()
+        AddPlanContent()
     }
 }
 

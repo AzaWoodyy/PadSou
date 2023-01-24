@@ -20,13 +20,13 @@ fun RegisterPageHeader() {
         Column (
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(0.dp, 40.dp, 0.dp, 50.dp)
+                .padding(0.dp, 40.dp, 0.dp, 0.dp)
                 .fillMaxWidth()
         ){
             Text(
                 color = AlmostBlackCustom,
                 fontFamily = IntegralCf,
-                fontSize = 30.sp,
+                fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 text = "Bienvenue \uD83D\uDE0E"
             )

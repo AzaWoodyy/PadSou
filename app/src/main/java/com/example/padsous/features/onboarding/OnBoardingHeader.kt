@@ -20,7 +20,7 @@ fun OnBoardingHeader() {
     Column (
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .padding(0.dp, 75.dp, 0.dp, 0.dp)
+            .padding(20.dp, 65.dp, 20.dp, 0.dp)
             .fillMaxWidth()
             ){
         Text(
