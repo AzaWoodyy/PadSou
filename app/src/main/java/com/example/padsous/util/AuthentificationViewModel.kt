@@ -15,7 +15,7 @@ class AuthentificationViewModel() : ViewModel() {
     val authenticationState: LiveData<AuthenticationState>
         get() = _authentificationState
 
-    fun register(email: String, password: String, context: Context) {
+    fun register(email: String, password: String, context: Context, navigateToHomePage: () -> Unit) {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -25,13 +25,14 @@ class AuthentificationViewModel() : ViewModel() {
                         "Compte créé !",
                         Toast.LENGTH_SHORT
                     ).show()
+                    navigateToHomePage()
                 } else {
                     _authentificationState.value = AuthenticationState.UNAUTHENTICATED
                 }
             }
     }
 
-    fun login(email: String, password: String, context: Context) {
+    fun login(email: String, password: String, context: Context, navigateToLoginPage: () -> Unit) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -41,6 +42,7 @@ class AuthentificationViewModel() : ViewModel() {
                         "Vous êtes connecté !",
                         Toast.LENGTH_SHORT
                     ).show()
+                    navigateToLoginPage()
                 } else {
                     _authentificationState.value = AuthenticationState.UNAUTHENTICATED
                     Toast.makeText(

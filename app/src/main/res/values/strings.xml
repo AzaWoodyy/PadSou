@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PadSous</string>
+    <string name="homePage">HomePage</string>
+    <string name="onBoarding">OnBoarding</string>
+    <string name="planDetail">PlanDetail</string>
+    <string name="register">Register</string>
+    <string name="addPlan">AddPlan</string>
+    <string name="login">Login</string>
 </resources>

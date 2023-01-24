@@ -1,6 +1,5 @@
 package com.example.padsous.features.homepage
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.*
@@ -17,7 +16,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.padsous.ui.theme.*
@@ -25,7 +23,9 @@ import com.example.padsous.util.AuthentificationViewModel
 
 
 @Composable
-fun RegisterPageForm(viewModel: AuthentificationViewModel) {
+fun RegisterPageForm(
+    navigateToHomePage: () -> Unit,
+    viewModel: AuthentificationViewModel) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -150,7 +150,7 @@ fun RegisterPageForm(viewModel: AuthentificationViewModel) {
                 Button(
                     onClick = {
                         if (password == confirmPassword) {
-                            viewModel.register(email, password, context = context)
+                            viewModel.register(email, password, context = context, navigateToHomePage)
                         }
                     },
                     colors = ButtonDefaults.buttonColors(

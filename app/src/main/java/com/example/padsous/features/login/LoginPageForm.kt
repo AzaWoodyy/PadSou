@@ -1,6 +1,5 @@
 package com.example.padsous.features.login
 
-import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -16,7 +15,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -24,7 +22,7 @@ import com.example.padsous.ui.theme.*
 import com.example.padsous.util.AuthentificationViewModel
 
 @Composable
-fun LoginPageForm(viewModel: AuthentificationViewModel) {
+fun LoginPageForm(viewModel: AuthentificationViewModel, navigateToLoginPage: () -> Unit) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -111,7 +109,7 @@ fun LoginPageForm(viewModel: AuthentificationViewModel) {
         Box(modifier = Modifier.padding(horizontal = 20.dp)) {
             Button(
                 onClick = {
-                    viewModel.login(email, password, context = context)
+                    viewModel.login(email, password, context = context, navigateToLoginPage)
                 },
                 shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(

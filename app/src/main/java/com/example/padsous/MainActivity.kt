@@ -1,15 +1,24 @@
 package com.example.padsous
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import com.example.padsous.features.navigation.BottomNavigationBar
+import com.example.padsous.features.navigation.ScreensNavHost
+import com.example.padsous.models.Screen
 import com.example.padsous.models.Plan
 import com.example.padsous.screens.*
 
@@ -19,7 +28,6 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -36,22 +44,27 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Greeting() {
     val systemUiController = rememberSystemUiController()
-    val plan1: Plan = Plan(id = 8, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg, nbTesters = 12)
+    val bottomBarPage = listOf(
+        Screen.HomePageScreen.route,
+        Screen.AddPlanScreen.route
+    )
+    val navController = rememberNavController()
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navBackStackEntry?.destination
 
-    HorizontalPager(count = 6)
-    { page ->
-        when (page) {
-            0 -> OnBoarding(systemUiController)
-            1 -> HomePage(systemUiController)
-            2 -> PlanDetail(systemUiController, plan1)
-            3 -> RegisterPage(systemUiController)
-            4 -> LoginPage(systemUiController)
-            5 -> AddPlan(systemUiController)
+    Scaffold(
+        bottomBar = {
+            if (bottomBarPage.contains(currentDestination?.route)) {
+                BottomNavigationBar(navController)
+            }
         }
+    ){
+        ScreensNavHost(navController = navController, systemUiController = systemUiController)
     }
 
 }

@@ -11,15 +11,15 @@ import com.example.padsous.features.login.LoginPageForm
 import com.example.padsous.features.login.LoginPageHeader
 import com.example.padsous.ui.theme.MediumGreyCustom
 import com.example.padsous.util.AuthentificationViewModel
-import com.example.padsous.ui.theme.BlueCustom
-import com.example.padsous.ui.theme.GreyCustom
-import com.example.padsous.ui.theme.MediumGreyCustom
 import com.google.accompanist.systemuicontroller.SystemUiController
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
-fun LoginPage(systemUiController: SystemUiController) {
+fun LoginPage(
+    navigateToLoginPage: () -> Unit,
+    navigateToLoginRegister: () -> Unit,
+    systemUiController: SystemUiController
+) {
     systemUiController.setSystemBarsColor(
         color = MediumGreyCustom
     )
@@ -30,7 +30,7 @@ fun LoginPage(systemUiController: SystemUiController) {
         .fillMaxSize()
         .background(color = MediumGreyCustom),) {
         LoginPageHeader()
-        LoginPageForm(viewModel = AuthentificationViewModel())
-        LoginPageFooter()
+        LoginPageForm(viewModel = AuthentificationViewModel(), navigateToLoginPage)
+        LoginPageFooter(navigateToLoginRegister)
     }
 }

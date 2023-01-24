@@ -12,11 +12,14 @@ import com.example.padsous.features.register.RegisterPageFooter
 import com.example.padsous.ui.theme.MediumGreyCustom
 import com.example.padsous.util.AuthentificationViewModel
 import com.google.accompanist.systemuicontroller.SystemUiController
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
-fun RegisterPage(systemUiController: SystemUiController) {
+fun RegisterPage(
+    navigateToHomePage: () -> Unit,
+    navigateToLoginPage: () -> Unit,
+    systemUiController: SystemUiController
+) {
     systemUiController.setSystemBarsColor(
         color = MediumGreyCustom
     )
@@ -24,12 +27,12 @@ fun RegisterPage(systemUiController: SystemUiController) {
     Column (
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
-        .fillMaxSize()
-        .background(color = MediumGreyCustom),)
+            .fillMaxSize()
+            .background(color = MediumGreyCustom),)
     {
         RegisterPageHeader()
-        RegisterPageForm(viewModel = AuthentificationViewModel())
-        RegisterPageFooter()
+        RegisterPageForm(navigateToHomePage = navigateToHomePage, viewModel = AuthentificationViewModel())
+        RegisterPageFooter(navigateToLoginPage)
     }
 
 
