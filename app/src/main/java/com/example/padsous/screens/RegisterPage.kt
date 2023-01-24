@@ -1,6 +1,8 @@
 package com.example.padsous.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -9,18 +11,28 @@ import com.example.padsous.features.homepage.RegisterPageForm
 import com.example.padsous.features.homepage.RegisterPageHeader
 import com.example.padsous.features.register.RegisterPageFooter
 import com.example.padsous.ui.theme.MediumGreyCustom
+import com.example.padsous.util.AuthentificationViewModel
+import com.google.accompanist.systemuicontroller.SystemUiController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
-fun RegisterPage(navigateToHomePage: () -> Unit) {
+fun RegisterPage(
+    navigateToHomePage: () -> Unit,
+    systemUiController: SystemUiController
+) {
+    systemUiController.setSystemBarsColor(
+        color = MediumGreyCustom
+    )
+
     Column (
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .fillMaxSize()
             .background(color = MediumGreyCustom),)
     {
-       RegisterPageHeader()
-        RegisterPageForm(navigateToHomePage = navigateToHomePage)
+        RegisterPageHeader()
+        RegisterPageForm(navigateToHomePage = navigateToHomePage, viewModel = AuthentificationViewModel())
         RegisterPageFooter()
     }
 

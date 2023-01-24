@@ -25,6 +25,7 @@ import com.example.padsous.screens.*
 import com.example.padsous.ui.theme.PadSousTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +48,7 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Greeting() {
-
+    val systemUiController = rememberSystemUiController()
     val bottomBarPage = listOf(
         Screen.HomePageScreen.route,
         Screen.AddPlanScreen.route
@@ -57,7 +58,6 @@ fun Greeting() {
     val currentDestination = navBackStackEntry?.destination
 
     Scaffold(
-
         bottomBar = {
             if (bottomBarPage.contains(currentDestination?.route)) {
                 BottomNavigationBar(navController)
@@ -66,6 +66,7 @@ fun Greeting() {
     ){
         ScreensNavHost(navController = navController)
     }
+
 }
 
 @Preview(showBackground = true)
