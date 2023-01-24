@@ -1,5 +1,6 @@
 package com.example.padsous.features.homepage
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.*
@@ -11,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -19,17 +21,21 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.padsous.ui.theme.*
+import com.example.padsous.util.AuthentificationViewModel
 
 
 @Composable
-fun RegisterPageForm() {
+fun RegisterPageForm(viewModel: AuthentificationViewModel) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            var text1 by remember { mutableStateOf(TextFieldValue("")) }
-            var text2 by remember { mutableStateOf(TextFieldValue("")) }
-            var text3 by remember { mutableStateOf(TextFieldValue("")) }
+            var email by remember { mutableStateOf("") }
+            var password by remember { mutableStateOf("") }
+            var confirmPassword by remember { mutableStateOf("") }
+
+            val context = LocalContext.current
+
 
 
             //------------------------Inputs Email ---------------------
@@ -40,7 +46,7 @@ fun RegisterPageForm() {
                     .padding(horizontal = 20.dp)
                     .clip(RoundedCornerShape(20))
                     .background(color = Color.White),
-                value = text1,
+                value = email,
                 maxLines = 1,
                 singleLine = true,
                 colors = TextFieldDefaults.textFieldColors(
@@ -57,7 +63,7 @@ fun RegisterPageForm() {
                                         color = GreyCustom))
                               },
                 onValueChange = {
-                    text1 = it
+                    email = it
                 },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             )
@@ -72,7 +78,7 @@ fun RegisterPageForm() {
                     .padding(horizontal = 20.dp)
                     .clip(RoundedCornerShape(20))
                     .background(color = Color.White),
-                value = text2,
+                value = password,
                 colors = TextFieldDefaults.textFieldColors(
                         backgroundColor = Color.White,
                         focusedIndicatorColor = Color.Transparent,
@@ -88,7 +94,7 @@ fun RegisterPageForm() {
                                         fontFamily = Inter,
                                         color = GreyCustom)) },
                 onValueChange = {
-                    text2 = it
+                    password = it
                 },
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -111,7 +117,7 @@ fun RegisterPageForm() {
                     disabledIndicatorColor = Color.Transparent,
                     cursorColor = Color.Black,
                     textColor = Color.Black),
-                value = text3,
+                value = confirmPassword,
                 maxLines = 1,
                 singleLine = true,
                 shape = RoundedCornerShape(20),
@@ -120,7 +126,7 @@ fun RegisterPageForm() {
                                         fontFamily = Inter,
                                         color = GreyCustom)) },
                 onValueChange = {
-                    text3 = it
+                    confirmPassword = it
                 },
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -140,7 +146,11 @@ fun RegisterPageForm() {
             }
             Box(modifier = Modifier.padding(horizontal = 20.dp)) {
                 Button(
-                    onClick = {},
+                    onClick = {
+                        if (password == confirmPassword) {
+                            viewModel.register(email, password, context = context)
+                        }
+                    },
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = DarkBlueCustom
                     ),

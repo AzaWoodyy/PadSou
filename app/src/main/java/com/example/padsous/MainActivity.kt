@@ -11,12 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.padsous.models.Plan
-import com.example.padsous.screens.HomePage
-
-import com.example.padsous.screens.RegisterPage
-
-import com.example.padsous.screens.OnBoarding
-import com.example.padsous.screens.PlanDetail
+import com.example.padsous.screens.*
 
 import com.example.padsous.ui.theme.PadSousTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -44,13 +39,14 @@ class MainActivity : ComponentActivity() {
 fun Greeting() {
     val plan1: Plan = Plan(id = 8, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg, nbTesters = 12)
 
-    HorizontalPager(count = 4)
+    HorizontalPager(count = 5)
     { page ->
         when (page) {
             0 -> OnBoarding()
             1 -> HomePage()
             2 -> PlanDetail(plan1)
             3 -> RegisterPage()
+            4 -> LoginPage()
         }
     }
 

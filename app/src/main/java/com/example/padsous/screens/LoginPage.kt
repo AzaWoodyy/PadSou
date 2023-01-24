@@ -8,8 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import com.example.padsous.features.login.LoginPageFooter
 import com.example.padsous.features.login.LoginPageForm
 import com.example.padsous.features.login.LoginPageHeader
-
 import com.example.padsous.ui.theme.MediumGreyCustom
+import com.example.padsous.util.AuthentificationViewModel
+
 
 @Composable
 fun LoginPage() {
@@ -17,7 +18,7 @@ fun LoginPage() {
         .fillMaxSize()
         .background(color = MediumGreyCustom),) {
         LoginPageHeader()
-        LoginPageForm()
+        LoginPageForm(viewModel = AuthentificationViewModel())
         LoginPageFooter()
     }
 }
