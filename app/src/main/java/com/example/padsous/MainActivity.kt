@@ -64,7 +64,7 @@ fun Greeting() {
             }
         }
     ){
-        ScreensNavHost(navController = navController)
+        ScreensNavHost(navController = navController, systemUiController = systemUiController)
     }
 
 }

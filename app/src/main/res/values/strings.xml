@@ -5,4 +5,5 @@
     <string name="planDetail">PlanDetail</string>
     <string name="register">Register</string>
     <string name="addPlan">AddPlan</string>
+    <string name="login">Login</string>
 </resources>

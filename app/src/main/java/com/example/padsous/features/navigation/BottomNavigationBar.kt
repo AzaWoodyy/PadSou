@@ -38,7 +38,7 @@ import com.example.padsous.screens.PlanDetail
 import com.example.padsous.screens.RegisterPage
 import com.example.padsous.ui.theme.*
 
-private object NoRippleTheme : RippleTheme {
+object NoRippleTheme : RippleTheme {
     @Composable
     override fun defaultColor() = Color.Unspecified
 

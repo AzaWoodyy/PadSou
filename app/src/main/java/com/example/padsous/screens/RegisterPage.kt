@@ -6,19 +6,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import com.example.padsous.features.homepage.RegisterPageForm
 import com.example.padsous.features.homepage.RegisterPageHeader
 import com.example.padsous.features.register.RegisterPageFooter
 import com.example.padsous.ui.theme.MediumGreyCustom
 import com.example.padsous.util.AuthentificationViewModel
 import com.google.accompanist.systemuicontroller.SystemUiController
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
 fun RegisterPage(
     navigateToHomePage: () -> Unit,
+    navigateToLoginPage: () -> Unit,
     systemUiController: SystemUiController
 ) {
     systemUiController.setSystemBarsColor(
@@ -33,7 +32,7 @@ fun RegisterPage(
     {
         RegisterPageHeader()
         RegisterPageForm(navigateToHomePage = navigateToHomePage, viewModel = AuthentificationViewModel())
-        RegisterPageFooter()
+        RegisterPageFooter(navigateToLoginPage)
     }
 
 
