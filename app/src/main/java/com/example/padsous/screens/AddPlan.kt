@@ -14,9 +14,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.padsous.components.BoxWithConstraintsTouchable
 import com.example.padsous.features.addplan.AddPlanContent
 import com.example.padsous.features.addplan.AddPlanHeader
 import com.example.padsous.features.homepage.HomePageHeader
@@ -32,14 +34,18 @@ fun AddPlan(systemUiController: SystemUiController) {
         color = BlueCustom
     )
 
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .fillMaxSize()
-            .background(BlueCustom)
-    ) {
-        AddPlanHeader()
-        AddPlanContent()
+    val focusManager = LocalFocusManager.current
+
+    BoxWithConstraintsTouchable(focusManager = focusManager) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxSize()
+                .background(BlueCustom)
+        ) {
+            AddPlanHeader()
+            AddPlanContent()
+        }
     }
 }
 

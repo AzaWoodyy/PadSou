@@ -6,6 +6,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.platform.LocalFocusManager
+import com.example.padsous.components.BoxWithConstraintsTouchable
 import com.example.padsous.features.login.LoginPageFooter
 import com.example.padsous.features.login.LoginPageForm
 import com.example.padsous.features.login.LoginPageHeader
@@ -22,13 +24,18 @@ fun LoginPage(systemUiController: SystemUiController) {
         color = MediumGreyCustom
     )
 
-    Column(
-        verticalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier
-        .fillMaxSize()
-        .background(color = MediumGreyCustom),) {
-        LoginPageHeader()
-        LoginPageForm()
-        LoginPageFooter()
+    val focusManager = LocalFocusManager.current
+
+    BoxWithConstraintsTouchable(focusManager = focusManager) {
+        Column(
+            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = MediumGreyCustom),
+        ) {
+            LoginPageHeader()
+            LoginPageForm()
+            LoginPageFooter()
+        }
     }
 }
