@@ -9,10 +9,16 @@ import com.example.padsous.features.homepage.RegisterPageForm
 import com.example.padsous.features.homepage.RegisterPageHeader
 import com.example.padsous.features.register.RegisterPageFooter
 import com.example.padsous.ui.theme.MediumGreyCustom
+import com.google.accompanist.systemuicontroller.SystemUiController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 @Composable
-fun RegisterPage() {
+fun RegisterPage(systemUiController: SystemUiController) {
+    systemUiController.setSystemBarsColor(
+        color = MediumGreyCustom
+    )
+
     Column (
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
