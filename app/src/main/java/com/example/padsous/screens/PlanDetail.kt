@@ -13,10 +13,17 @@ import com.example.padsous.features.plandetail.PlanDetailContent
 import com.example.padsous.features.plandetail.PlanDetailFooter
 import com.example.padsous.features.plandetail.PlanDetailHeader
 import com.example.padsous.models.Plan
+import com.example.padsous.ui.theme.AlmostBlackCustom
 import com.example.padsous.ui.theme.MediumGreyCustom
+import com.google.accompanist.systemuicontroller.SystemUiController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
-fun PlanDetail(plan: Plan) {
+fun PlanDetail(systemUiController: SystemUiController, plan: Plan) {
+    systemUiController.setSystemBarsColor(
+        color = AlmostBlackCustom
+    )
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier

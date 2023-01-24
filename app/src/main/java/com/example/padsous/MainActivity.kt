@@ -16,8 +16,10 @@ import com.example.padsous.screens.*
 import com.example.padsous.ui.theme.PadSousTheme
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -37,17 +39,18 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Greeting() {
+    val systemUiController = rememberSystemUiController()
     val plan1: Plan = Plan(id = 8, name = "Bon plan otacos", description = "1 tacos acheté 1 tacos offert", descImage = R.drawable.kebabdesc, image = R.drawable.kebabimg, nbTesters = 12)
 
     HorizontalPager(count = 6)
     { page ->
         when (page) {
-            0 -> OnBoarding()
-            1 -> HomePage()
-            2 -> PlanDetail(plan1)
-            3 -> RegisterPage()
-            4 -> LoginPage()
-            5 -> AddPlan()
+            0 -> OnBoarding(systemUiController)
+            1 -> HomePage(systemUiController)
+            2 -> PlanDetail(systemUiController, plan1)
+            3 -> RegisterPage(systemUiController)
+            4 -> LoginPage(systemUiController)
+            5 -> AddPlan(systemUiController)
         }
     }
 

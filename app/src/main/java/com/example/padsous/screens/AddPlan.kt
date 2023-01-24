@@ -23,9 +23,15 @@ import com.example.padsous.features.homepage.HomePageHeader
 import com.example.padsous.ui.theme.BlueCustom
 import com.example.padsous.ui.theme.IntegralCf
 import com.example.padsous.ui.theme.SalmonCustom
+import com.google.accompanist.systemuicontroller.SystemUiController
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
-fun AddPlan() {
+fun AddPlan(systemUiController: SystemUiController) {
+    systemUiController.setSystemBarsColor(
+        color = BlueCustom
+    )
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
