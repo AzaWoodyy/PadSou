@@ -3,6 +3,7 @@ package com.example.padsous.features.homepage.content
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -15,12 +16,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberAsyncImagePainter
 import com.example.padsous.models.Plan
 import com.example.padsous.ui.theme.AlmostBlackCustom
 import com.example.padsous.ui.theme.Inter
 
 @Composable
-fun Card(plan: Plan) {
+fun Card(plan: Plan, navigateToDetail: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -30,11 +32,12 @@ fun Card(plan: Plan) {
             .padding(10.dp),
     ) {
         Box(
-            contentAlignment = Alignment.BottomCenter
+            contentAlignment = Alignment.BottomCenter,
+            modifier = Modifier.clickable { navigateToDetail() }
         )
         {
-            Image(
-                painter = painterResource(id = plan.descImage),
+                Image(
+                painter = rememberAsyncImagePainter(model = plan.image),
                 modifier = Modifier
                     .height(90.dp)
                     .clip(RoundedCornerShape(10.dp))
@@ -43,7 +46,7 @@ fun Card(plan: Plan) {
                 contentDescription = "descimg"
             )
             Image(
-                painter = painterResource(id = plan.image),
+                painter = painterResource(id = plan.logo),
                 modifier = Modifier
                     .height(30.dp)
                     .offset(y = 12.dp)

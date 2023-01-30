@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.padsous.components.BoxWithConstraintsTouchable
+import androidx.navigation.NavController
 import com.example.padsous.features.homepage.HomePageHeader
 import com.example.padsous.ui.theme.BlueCustom
 import com.example.padsous.ui.theme.IntegralCf
@@ -29,21 +30,26 @@ import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
-fun HomePage(systemUiController: SystemUiController) {
+fun HomePage(navController: NavController, systemUiController: SystemUiController) {
     val focusManager = LocalFocusManager.current
     systemUiController.setSystemBarsColor(
         color = BlueCustom
     )
+    systemUiController.setNavigationBarColor(
+        color = Color.White,
+        darkIcons = false
+    )
     BoxWithConstraintsTouchable(focusManager = focusManager) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(BlueCustom)
-        ) {
-            HomePageHeader()
-            HomePageContent()
-        }
+      Column(
+          horizontalAlignment = Alignment.CenterHorizontally,
+          modifier = Modifier
+              .fillMaxWidth()
+              .padding(bottom = 50.dp)
+              .background(BlueCustom)
+      ) {
+          HomePageHeader()
+          HomePageContent(navController)
+          }
     }
 }
 

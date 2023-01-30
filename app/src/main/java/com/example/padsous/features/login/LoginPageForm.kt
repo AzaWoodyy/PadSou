@@ -10,18 +10,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.padsous.ui.theme.*
+import com.example.padsous.util.AuthentificationViewModel
 
 @Composable
-fun LoginPageForm() {
+fun LoginPageForm(viewModel: AuthentificationViewModel, navigateToLoginPage: () -> Unit) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -29,8 +30,9 @@ fun LoginPageForm() {
             .offset(y = -(105.dp))
     ) {
 
-        var text1 by remember { mutableStateOf(TextFieldValue("")) }
-        var text2 by remember { mutableStateOf(TextFieldValue("")) }
+        val context = LocalContext.current
+        var email by remember { mutableStateOf("") }
+        var password by remember { mutableStateOf("") }
 
         OutlinedTextField(
             modifier = Modifier
@@ -38,7 +40,7 @@ fun LoginPageForm() {
                 .padding(horizontal = 20.dp)
                 .clip(RoundedCornerShape(20))
                 .background(color = Color.White),
-            value = text1,
+            value = email,
             maxLines = 1,
             singleLine = true,
             colors = TextFieldDefaults.textFieldColors(
@@ -57,7 +59,7 @@ fun LoginPageForm() {
             )
             },
             onValueChange = {
-                text1 = it
+                email = it
             },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         )
@@ -70,7 +72,7 @@ fun LoginPageForm() {
                 .padding(horizontal = 20.dp)
                 .clip(RoundedCornerShape(20))
                 .background(color = Color.White),
-            value = text2,
+            value = password,
             colors = TextFieldDefaults.textFieldColors(
                 backgroundColor = Color.White,
                 focusedIndicatorColor = Color.Transparent,
@@ -86,7 +88,7 @@ fun LoginPageForm() {
                     fontFamily = Inter,
                     color = GreyCustom)) },
             onValueChange = {
-                text2 = it
+                password = it
             },
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
@@ -106,7 +108,9 @@ fun LoginPageForm() {
 
         Box(modifier = Modifier.padding(horizontal = 20.dp)) {
             Button(
-                onClick = {},
+                onClick = {
+                    viewModel.login(email, password, context = context, navigateToLoginPage)
+                },
                 shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = DarkBlueCustom

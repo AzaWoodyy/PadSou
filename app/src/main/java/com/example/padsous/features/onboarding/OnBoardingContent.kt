@@ -1,6 +1,5 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.indication
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Colors
@@ -15,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.padsous.features.onboarding.VideoPlayer
 import com.example.padsous.ui.theme.AlmostBlackCustom
 import com.example.padsous.ui.theme.Inter
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -29,7 +29,7 @@ fun OnBoardingContent() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .height(500.dp)
+            .height(400.dp)
             .padding(0.dp, 40.dp, 0.dp, 0.dp)
             .fillMaxWidth()
     ) {

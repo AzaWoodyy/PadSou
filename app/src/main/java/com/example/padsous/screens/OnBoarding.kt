@@ -5,15 +5,17 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.example.padsous.features.onboarding.OnBoardingFooter
 import com.example.padsous.features.onboarding.OnBoardingHeader
 import com.example.padsous.ui.theme.BlueCustom
 import com.google.accompanist.systemuicontroller.SystemUiController
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
-fun OnBoarding(systemUiController: SystemUiController) {
+fun OnBoarding(
+    onNavigateToLogin: () -> Unit,
+    onNavigateToVideo: () -> Unit,
+    systemUiController: SystemUiController
+) {
     systemUiController.setSystemBarsColor(
         color = BlueCustom
     )
@@ -27,6 +29,6 @@ fun OnBoarding(systemUiController: SystemUiController) {
     ) {
             OnBoardingHeader()
             OnBoardingContent()
-            OnBoardingFooter()
+            OnBoardingFooter(onNavigateToLogin, onNavigateToVideo)
     }
 }
