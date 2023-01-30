@@ -1,5 +1,6 @@
 package com.example.padsous.features.onboarding
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -17,12 +18,13 @@ import com.example.padsous.ui.theme.IntegralCf
 import com.example.padsous.ui.theme.SalmonCustom
 
 @Composable
-fun OnBoardingFooter(onNavigateToLogin: () -> Unit) {
+fun OnBoardingFooter(onNavigateToLogin: () -> Unit, onNavigateToVideo: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceAround,
         modifier = Modifier
             .fillMaxWidth()
-            .offset(y = -(50).dp)
+            .fillMaxHeight()
     ) {
         Button(
             onClick = onNavigateToLogin,
@@ -42,6 +44,26 @@ fun OnBoardingFooter(onNavigateToLogin: () -> Unit) {
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 text = "C'EST PARTI !"
+            )
+        }
+        Button(
+            onClick = onNavigateToVideo,
+            Modifier
+                .width(250.dp)
+                .clip(shape = RoundedCornerShape(15.dp))
+                .height(50.dp),
+
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = SalmonCustom,
+                contentColor = Color.White
+            )
+        ) {
+            Text(
+                color = Color.White,
+                fontFamily = IntegralCf,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                text = "Video"
             )
         }
     }

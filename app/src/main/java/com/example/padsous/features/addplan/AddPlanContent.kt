@@ -1,6 +1,5 @@
 package com.example.padsous.features.addplan
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -10,10 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import com.example.padsous.R
 import com.example.padsous.features.addplan.content.PlanContent
 import com.example.padsous.features.addplan.content.PlanImage
-import com.example.padsous.features.homepage.content.SearchBar
 import com.example.padsous.ui.theme.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -31,6 +28,7 @@ fun AddPlanContent() {
         modifier = Modifier
             .clip(RoundedCornerShape(topEnd = 35.dp, topStart = 35.dp))
             .background(MediumGreyCustom)
+            .padding(bottom = 40.dp)
             .fillMaxWidth()
             .fillMaxHeight()
     ) {
@@ -47,7 +45,7 @@ fun AddPlanContent() {
             count = 2,
             userScrollEnabled = swipable,
             state = pagerState
-            )
+        )
         { page ->
             swipable = currentPage != 0
             when (page) {
