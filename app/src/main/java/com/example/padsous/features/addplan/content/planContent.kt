@@ -74,7 +74,8 @@ fun PlanContent(
                     ),
                     modifier = Modifier
                         .padding(top = 5.dp)
-                        .clip(RoundedCornerShape(20.dp)),
+                        .clip(RoundedCornerShape(20.dp))
+                        .fillMaxWidth(),
                     placeholder = {
                         Text(
                             "Abonnement 1 an Basic-Fit",
@@ -121,7 +122,8 @@ fun PlanContent(
                     modifier = Modifier
                         .padding(top = 5.dp)
                         .clip(RoundedCornerShape(20.dp))
-                        .height(130.dp),
+                        .height(130.dp)
+                        .fillMaxWidth(),
                     placeholder = {
                         Text(
                             "Ne soit pas trop bavard, on s’en fou, va à l’essentiel",
@@ -169,7 +171,8 @@ fun PlanContent(
                     ),
                     modifier = Modifier
                         .padding(top = 5.dp)
-                        .clip(RoundedCornerShape(20.dp)),
+                        .clip(RoundedCornerShape(20.dp))
+                        .fillMaxWidth(),
                     placeholder = {
                         Text(
                             "www.lienverstonbonplan.com",

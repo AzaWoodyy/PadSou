@@ -5,6 +5,7 @@ import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
@@ -156,6 +157,11 @@ fun PlanImage(
                 addPlan(plan = newPlan)
                 navigateToHomePage()
                 coroutineScope.launch { pageState.scrollToPage(0)}
+                Toast.makeText(
+                    context,
+                    "Plan ajouté !",
+                    Toast.LENGTH_SHORT
+                ).show()
             },
             Modifier
                 .width(300.dp)
