@@ -31,6 +31,10 @@ fun AddPlan(systemUiController: SystemUiController) {
     systemUiController.setSystemBarsColor(
         color = BlueCustom
     )
+    systemUiController.setNavigationBarColor(
+        color = Color.White,
+        darkIcons = false
+    )
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,

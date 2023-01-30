@@ -17,7 +17,6 @@ import com.example.padsous.ui.theme.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
@@ -28,7 +27,7 @@ fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
-            .padding(vertical = 50.dp)
+            .padding(bottom = 50.dp)
     ) {
         Box(modifier = Modifier
             .padding(horizontal = 40.dp)
@@ -177,7 +176,7 @@ fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
             }
         }
         Button(
-            onClick = { coroutineScope.launch { pageState.animateScrollToPage(pageState.currentPage + 1)} },
+            onClick = { coroutineScope.launch { pageState.animateScrollToPage(pageState.currentPage + 1) } },
             Modifier
                 .width(300.dp)
                 .clip(shape = RoundedCornerShape(20.dp))

@@ -79,7 +79,7 @@ fun DetailContent(navController: NavController) {
             crossAxisSpacing = 10.dp,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 20.dp, bottom = 20.dp)
+                .padding(top = 20.dp, bottom = 35.dp)
         ) {
             for (plan in plans) {
                 Card(plan = plan, navigateToDetail = {navController.navigate(Screen.PlanDetailScreen.route+"/"+plan.id)})

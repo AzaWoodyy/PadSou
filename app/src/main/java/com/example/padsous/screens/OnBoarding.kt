@@ -13,6 +13,7 @@ import com.google.accompanist.systemuicontroller.SystemUiController
 @Composable
 fun OnBoarding(
     onNavigateToLogin: () -> Unit,
+    onNavigateToVideo: () -> Unit,
     systemUiController: SystemUiController
 ) {
     systemUiController.setSystemBarsColor(
@@ -28,6 +29,6 @@ fun OnBoarding(
     ) {
             OnBoardingHeader()
             OnBoardingContent()
-            OnBoardingFooter(onNavigateToLogin)
+            OnBoardingFooter(onNavigateToLogin, onNavigateToVideo)
     }
 }

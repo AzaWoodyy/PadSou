@@ -6,6 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.example.padsous.features.homepage.content.SearchBar
@@ -22,6 +23,10 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 fun PlanDetail(systemUiController: SystemUiController, plan: Plan) {
     systemUiController.setSystemBarsColor(
         color = AlmostBlackCustom
+    )
+    systemUiController.setNavigationBarColor(
+        color = MediumGreyCustom,
+        darkIcons = false
     )
 
     Column(
