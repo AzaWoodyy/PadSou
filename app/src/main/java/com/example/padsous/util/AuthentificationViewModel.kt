@@ -16,42 +16,63 @@ class AuthentificationViewModel() : ViewModel() {
         get() = _authentificationState
 
     fun register(email: String, password: String, context: Context, navigateToHomePage: () -> Unit) {
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    _authentificationState.value = AuthenticationState.AUTHENTICATED
-                    Toast.makeText(
-                        context,
-                        "Compte créé !",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    navigateToHomePage()
-                } else {
-                    _authentificationState.value = AuthenticationState.UNAUTHENTICATED
+
+        if(email.isNotEmpty() && password.isNotEmpty()) {
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        _authentificationState.value = AuthenticationState.AUTHENTICATED
+                        Toast.makeText(
+                            context,
+                            "Compte créé !",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        navigateToHomePage()
+                    } else {
+                        _authentificationState.value = AuthenticationState.UNAUTHENTICATED
+                    }
                 }
-            }
+        } else {
+
+            _authentificationState.value = AuthenticationState.UNAUTHENTICATED
+            Toast.makeText(
+                context,
+                "Mot de passe ou email incorrect. Veuillez réessayez de vous connecter",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     fun login(email: String, password: String, context: Context, navigateToLoginPage: () -> Unit) {
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    _authentificationState.value = AuthenticationState.AUTHENTICATED
-                    Toast.makeText(
-                        context,
-                        "Vous êtes connecté !",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    navigateToLoginPage()
-                } else {
-                    _authentificationState.value = AuthenticationState.UNAUTHENTICATED
-                    Toast.makeText(
-                        context,
-                        "Mot de passe ou email incorrect. Veuillez réessayez de vous connecter",
-                        Toast.LENGTH_SHORT
-                    ).show()
+        if(email.isNotEmpty() && password.isNotEmpty()){
+
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        _authentificationState.value = AuthenticationState.AUTHENTICATED
+                        Toast.makeText(
+                            context,
+                            "Vous êtes connecté !",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        navigateToLoginPage()
+                    } else {
+                        _authentificationState.value = AuthenticationState.UNAUTHENTICATED
+                        Toast.makeText(
+                            context,
+                            "Mot de passe ou email incorrect. Veuillez réessayez de vous connecter",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
-            }
-        navigateToLoginPage()
+        } else {
+
+            _authentificationState.value = AuthenticationState.UNAUTHENTICATED
+            Toast.makeText(
+                context,
+                "Mot de passe ou email incorrect. Veuillez réessayez de vous connecter",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }

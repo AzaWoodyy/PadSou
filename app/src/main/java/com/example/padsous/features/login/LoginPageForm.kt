@@ -109,6 +109,12 @@ fun LoginPageForm(viewModel: AuthentificationViewModel, navigateToLoginPage: () 
         Box(modifier = Modifier.padding(horizontal = 20.dp)) {
             Button(
                 onClick = {
+                    if(email == null){
+                        email = ""
+                    }
+                    if(password == null){
+                        password = ""
+                    }
                     viewModel.login(email, password, context = context, navigateToLoginPage)
                 },
                 shape = RoundedCornerShape(20.dp),
