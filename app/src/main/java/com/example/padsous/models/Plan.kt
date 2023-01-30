@@ -4,7 +4,8 @@ data class Plan(
     val id: Int,
     val name: String,
     val description: String,
-    val descImage: Int,
+    val link: String,
+    val image: String,
     val nbTesters: Int,
-    val image: Int
+    val logo: Int
 )

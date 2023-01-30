@@ -58,6 +58,8 @@ fun Greeting() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
+    println(currentDestination)
+
     Scaffold(
         bottomBar = {
             if (bottomBarPage.contains(currentDestination?.route)) {

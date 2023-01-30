@@ -33,7 +33,7 @@ class AuthentificationViewModel() : ViewModel() {
     }
 
     fun login(email: String, password: String, context: Context, navigateToLoginPage: () -> Unit) {
-        /*firebaseAuth.signInWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     _authentificationState.value = AuthenticationState.AUTHENTICATED
@@ -51,7 +51,7 @@ class AuthentificationViewModel() : ViewModel() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-            }*/
+            }
         navigateToLoginPage()
     }
 }

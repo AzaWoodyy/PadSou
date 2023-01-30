@@ -17,13 +17,17 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.padsous.api.addPlan
+import com.example.padsous.models.Plan
+import com.example.padsous.ui.theme.BlueCustom
+import com.example.padsous.ui.theme.IntegralCf
 import androidx.core.content.ContextCompat.startActivity
 import com.example.padsous.ui.theme.BlueCustom
 import com.example.padsous.ui.theme.IntegralCf
 
 
 @Composable
-fun PlanDetailFooter() {
+fun PlanDetailFooter(plan: Plan) {
     val context = LocalContext.current
     val intent = remember { Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/")) }
 
@@ -34,7 +38,8 @@ fun PlanDetailFooter() {
     ) {
         Button(
             onClick = {
-                context.startActivity(intent)
+                addPlan(plan = plan);
+                context.startActivity(intent);
                       },
             Modifier
                 .width(300.dp)

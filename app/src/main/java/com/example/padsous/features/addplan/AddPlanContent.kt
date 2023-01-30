@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.padsous.features.addplan.content.PlanContent
 import com.example.padsous.features.addplan.content.PlanImage
 import com.example.padsous.ui.theme.*
@@ -19,10 +20,10 @@ import com.google.accompanist.pager.rememberPagerState
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun AddPlanContent() {
+fun AddPlanContent(navController: NavHostController, viewModel: PlanViewModel = androidx.lifecycle.viewmodel.compose.viewModel(), navigateToHomePage: () -> Unit) {
     val pagerState = rememberPagerState()
     val coroutineScope = rememberCoroutineScope()
-    var swipable by remember { mutableStateOf(false) }
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -43,17 +44,17 @@ fun AddPlanContent() {
         )
         HorizontalPager(
             count = 2,
-            userScrollEnabled = swipable,
+            userScrollEnabled = viewModel.swipable,
             state = pagerState
         )
         { page ->
-            swipable = currentPage != 0
+            viewModel.swipable = currentPage != 0
             when (page) {
                 0 -> {
-                    PlanContent(pagerState, coroutineScope)
+                    PlanContent(pagerState, coroutineScope, viewModel)
                 }
                 1 -> {
-                    PlanImage(pagerState)
+                    PlanImage(pagerState, viewModel, navigateToHomePage, coroutineScope)
                 }
             }
         }
