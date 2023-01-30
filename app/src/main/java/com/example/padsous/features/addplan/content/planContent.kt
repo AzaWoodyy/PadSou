@@ -40,7 +40,7 @@ fun PlanContent(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
-            .padding(vertical = 50.dp)
+            .padding(bottom = 50.dp)
     ) {
         Box(modifier = Modifier
             .padding(horizontal = 40.dp)
@@ -191,8 +191,6 @@ fun PlanContent(
                 viewModel.sharedPlanDescription = descText.text;
                 viewModel.sharedPlanLink = urlText.text;
                 coroutineScope.launch { pageState.animateScrollToPage(pageState.currentPage + 1)}
-                //val newPlan = Plan(10, name = titleText.text, description = descText.text, link = urlText.text, 10, 25, 20)
-                //addPlan(plan = newPlan)
               },
             Modifier
                 .width(300.dp)

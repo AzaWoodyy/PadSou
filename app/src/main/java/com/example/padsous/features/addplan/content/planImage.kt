@@ -73,6 +73,7 @@ fun PlanImage(
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .padding(vertical = 40.dp)
+            .padding(bottom = 10.dp)
             .fillMaxSize()
     ) {
         Column(

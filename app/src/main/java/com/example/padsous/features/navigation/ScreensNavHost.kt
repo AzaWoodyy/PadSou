@@ -33,7 +33,7 @@ fun ScreensNavHost(
 
         composable(Screen.HomePageScreen.route) { HomePage(navController, systemUiController) }
         composable(Screen.RegisterScreen.route) { RegisterPage({ navController.navigate(Screen.HomePageScreen.route) }, { navController.navigate((Screen.LoginScreen.route)) }, systemUiController) }
-        composable(Screen.OnBoardingScreen.route) { OnBoarding({ navController.navigate(Screen.LoginScreen.route) }, systemUiController) }
+        composable(Screen.OnBoardingScreen.route) { OnBoarding({ navController.navigate(Screen.LoginScreen.route) }, { navController.navigate(Screen.VideoScreen.route) }, systemUiController) }
         composable(Screen.PlanDetailScreen.route+"/{planId}") { backStackEntry ->
             plans.find { it.id.toString() == backStackEntry.arguments?.getString("planId") }
                 ?.let { PlanDetail(plan = it, systemUiController = systemUiController) }
@@ -47,6 +47,8 @@ fun ScreensNavHost(
                 restoreState = true } },
             systemUiController = systemUiController,
             navController = navController) }
+        composable(Screen.ProfileScreen.route) { ProfilePage(systemUiController) }
         composable(Screen.LoginScreen.route) { LoginPage({ navController.navigate(Screen.HomePageScreen.route) }, { navController.navigate(Screen.RegisterScreen.route) }, systemUiController = systemUiController)}
+        composable(Screen.VideoScreen.route) { VideoPage(systemUiController) }
     }
 }

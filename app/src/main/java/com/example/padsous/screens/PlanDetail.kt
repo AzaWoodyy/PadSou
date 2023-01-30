@@ -5,6 +5,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.dp
+import com.example.padsous.features.homepage.content.SearchBar
 import com.example.padsous.features.plandetail.PlanDetailContent
 import com.example.padsous.features.plandetail.PlanDetailFooter
 import com.example.padsous.features.plandetail.PlanDetailHeader
@@ -17,6 +21,10 @@ import com.google.accompanist.systemuicontroller.SystemUiController
 fun PlanDetail(systemUiController: SystemUiController, plan: Plan) {
     systemUiController.setSystemBarsColor(
         color = AlmostBlackCustom
+    )
+    systemUiController.setNavigationBarColor(
+        color = MediumGreyCustom,
+        darkIcons = false
     )
 
     Column(

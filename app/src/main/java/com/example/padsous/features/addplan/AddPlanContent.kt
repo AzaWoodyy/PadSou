@@ -29,6 +29,7 @@ fun AddPlanContent(navController: NavHostController, viewModel: PlanViewModel = 
         modifier = Modifier
             .clip(RoundedCornerShape(topEnd = 35.dp, topStart = 35.dp))
             .background(MediumGreyCustom)
+            .padding(bottom = 40.dp)
             .fillMaxWidth()
             .fillMaxHeight()
     ) {
@@ -45,7 +46,7 @@ fun AddPlanContent(navController: NavHostController, viewModel: PlanViewModel = 
             count = 2,
             userScrollEnabled = viewModel.swipable,
             state = pagerState
-            )
+        )
         { page ->
             viewModel.swipable = currentPage != 0
             when (page) {

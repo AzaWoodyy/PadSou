@@ -12,6 +12,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.padsous.features.homepage.HomePageHeader
 import com.example.padsous.ui.theme.BlueCustom
@@ -25,11 +27,16 @@ fun HomePage(navController: NavController, systemUiController: SystemUiControlle
     systemUiController.setSystemBarsColor(
         color = BlueCustom
     )
+    systemUiController.setNavigationBarColor(
+        color = Color.White,
+        darkIcons = false
+    )
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
+            .padding(bottom = 50.dp)
             .background(BlueCustom)
     ) {
         HomePageHeader()

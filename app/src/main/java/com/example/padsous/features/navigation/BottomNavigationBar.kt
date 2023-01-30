@@ -51,7 +51,7 @@ fun BottomNavigationBar(navController: NavHostController) {
     val navItems = listOf(
         Screen.HomePageScreen,
         Screen.AddPlanScreen,
-        Screen.RegisterScreen, // replace it with the account screen
+        Screen.ProfileScreen,
     )
     BoxWithConstraints(modifier = Modifier.height(90.dp), contentAlignment = Alignment.BottomCenter) {
 
@@ -96,7 +96,7 @@ fun BottomNavigationBar(navController: NavHostController) {
                         when (screen.route) {
                             Screen.HomePageScreen.route -> bottomBarIcon = R.drawable.home_icon
                             Screen.AddPlanScreen.route -> bottomBarIcon = R.drawable.add_icon
-                            Screen.RegisterScreen.route -> bottomBarIcon = R.drawable.account_icon
+                            Screen.ProfileScreen.route -> bottomBarIcon = R.drawable.account_icon
                         }
 
                         BottomNavigationItem(

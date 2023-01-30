@@ -23,12 +23,12 @@ fun TypeIcon(text: String, color: Color, icon: Int) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .height(80.dp)
-            .width(60.dp)
+            .width(55.dp)
     ){
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(60.dp)
+                .height(55.dp)
                 .clip(RoundedCornerShape(5.dp))
                 .fillMaxWidth()
                 .background(color)
