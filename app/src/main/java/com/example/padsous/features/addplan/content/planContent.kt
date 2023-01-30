@@ -17,12 +17,24 @@ import com.example.padsous.ui.theme.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.navigation.NavHostController
+import com.example.padsous.features.addplan.PlanViewModel
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
+fun PlanContent(
+    pageState: PagerState,
+    coroutineScope: CoroutineScope,
+    viewModel: PlanViewModel
+) {
+
+    var titleText by remember { mutableStateOf(TextFieldValue("")) }
+    var descText by remember { mutableStateOf(TextFieldValue("")) }
+    var urlText by remember { mutableStateOf(TextFieldValue("")) }
+
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -42,7 +54,6 @@ fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
                     fontWeight = FontWeight.Bold,
                     text = "Titre"
                 )
-                var titleText by remember { mutableStateOf(TextFieldValue("")) }
                 OutlinedTextField(
                     value = titleText,
                     singleLine = true,
@@ -91,7 +102,6 @@ fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
                     fontWeight = FontWeight.Bold,
                     text = "Description"
                 )
-                var descText by remember { mutableStateOf(TextFieldValue("")) }
                 OutlinedTextField(
                     value = descText,
                     colors = TextFieldDefaults.textFieldColors(
@@ -139,7 +149,6 @@ fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
                     fontWeight = FontWeight.Bold,
                     text = "Lien"
                 )
-                var urlText by remember { mutableStateOf(TextFieldValue("")) }
                 OutlinedTextField(
                     value = urlText,
                     singleLine = true,
@@ -177,7 +186,14 @@ fun PlanContent(pageState: PagerState, coroutineScope: CoroutineScope) {
             }
         }
         Button(
-            onClick = { coroutineScope.launch { pageState.animateScrollToPage(pageState.currentPage + 1)} },
+            onClick = {
+                viewModel.sharedPlanTitle = titleText.text;
+                viewModel.sharedPlanDescription = descText.text;
+                viewModel.sharedPlanLink = urlText.text;
+                coroutineScope.launch { pageState.animateScrollToPage(pageState.currentPage + 1)}
+                //val newPlan = Plan(10, name = titleText.text, description = descText.text, link = urlText.text, 10, 25, 20)
+                //addPlan(plan = newPlan)
+              },
             Modifier
                 .width(300.dp)
                 .clip(shape = RoundedCornerShape(20.dp))

@@ -33,6 +33,9 @@ class AuthentificationViewModel() : ViewModel() {
     }
 
     fun login(email: String, password: String, context: Context, navigateToLoginPage: () -> Unit) {
+
+        navigateToLoginPage()
+        return
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {

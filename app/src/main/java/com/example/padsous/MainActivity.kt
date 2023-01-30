@@ -51,11 +51,13 @@ fun Greeting() {
     val systemUiController = rememberSystemUiController()
     val bottomBarPage = listOf(
         Screen.HomePageScreen.route,
-        Screen.AddPlanScreen.route
+        Screen.AddPlanScreen.route,
     )
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
+
+    println(currentDestination)
 
     Scaffold(
         bottomBar = {
